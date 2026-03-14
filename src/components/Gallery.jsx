@@ -1,6 +1,6 @@
 import { useState, useReducer, useCallback, useMemo } from 'react';
 import useFetchPhotos from '../hooks/useFetchPhotos';
-import { favouritesReducer, initialState } from '../../pdf/reducers/favouritesReducer';
+import { favouritesReducer, initialState } from '../reducers/favouritesReducer';
 import PhotoCard from './PhotoCard';
 import SearchBar from './SearchBar';
 

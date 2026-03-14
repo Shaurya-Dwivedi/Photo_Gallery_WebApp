@@ -1,4 +1,4 @@
-import Gallery from '../pdf/components/Gallery';
+import Gallery from './components/Gallery';
 
 export default function App() {
   return (

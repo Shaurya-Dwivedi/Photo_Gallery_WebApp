@@ -60,7 +60,7 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ## Architecture & Design
 
-> For a full deep-dive, see [ARCHITECTURE.md](./ARCHITECTURE.md) — includes Mermaid sequence diagrams, data flow diagrams, and detailed design rationale.
+> For a full deep-dive, see [ARCHITECTURE.md](./docs/architecture/ARCHITECTURE.md) — includes Mermaid sequence diagrams, data flow diagrams, and detailed design rationale.
 
 ### State Management & Persistence
 

@@ -138,5 +138,3 @@ Also added during the same debugging session:
 5. ✅ All 30 photo cards should remain fully visible at every width
 
 ---
-
-*Diagnosed using the `systematic-debugging` and `mobile-debugging` skills.*

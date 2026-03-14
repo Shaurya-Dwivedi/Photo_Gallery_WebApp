@@ -117,7 +117,8 @@ Typing in the search bar triggers frequent state updates. Two memoization strate
 
 | Document | Description |
 | :--- | :--- |
-| [ARCHITECTURE.md](./ARCHITECTURE.md) | System design, data flow diagrams, and technical deep-dive |
+| [ARCHITECTURE.md](./docs/architecture/ARCHITECTURE.md) | System design, data flow diagrams, and technical deep-dive |
+| [BUGS.md](./docs/bugs/BUGS.md) | Bugs faced during development and their solutions |
 | [Picsum Photos API](https://picsum.photos/) | The public photo API used by this application |
 
 ---

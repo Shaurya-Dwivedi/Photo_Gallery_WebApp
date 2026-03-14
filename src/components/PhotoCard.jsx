@@ -1,8 +1,16 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function PhotoCard({ photo, isFavourite, onToggleFavourite, index }) {
   const [animating, setAnimating] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  // React-controlled entrance: immune to CSS animation restarts on DevTools resize
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const id = setTimeout(() => setShow(true), Math.min(index * 40, 400));
+    return () => clearTimeout(id);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // intentionally empty — run once on mount only
 
   const handleHeart = () => {
     setAnimating(true);
@@ -12,8 +20,9 @@ export default function PhotoCard({ photo, isFavourite, onToggleFavourite, index
 
   return (
     <div
-      className="fade-up group relative rounded-xl overflow-hidden bg-[var(--color-surface-light)] ring-1 ring-white/[0.06] transition-shadow duration-300 hover:shadow-xl hover:shadow-black/30"
-      style={{ animationDelay: `${Math.min(index * 40, 400)}ms` }}
+      className={`group relative rounded-xl overflow-hidden bg-[var(--color-surface-light)] ring-1 ring-white/[0.06] transition-all duration-[350ms] ease-out hover:shadow-xl hover:shadow-black/30 ${
+        show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+      }`}
     >
       {/* ── Image ──────────────────────────────────── */}
       <div className="relative aspect-[4/3] overflow-hidden bg-[var(--color-surface-lighter)]">
@@ -22,8 +31,8 @@ export default function PhotoCard({ photo, isFavourite, onToggleFavourite, index
           src={`https://picsum.photos/id/${photo.id}/600/450`}
           alt={`Photo by ${photo.author}`}
           className={`w-full h-full object-cover transition-all duration-500 group-hover:scale-[1.04] ${loaded ? 'opacity-100' : 'opacity-0'}`}
-          loading="lazy"
           onLoad={() => setLoaded(true)}
+          onError={() => setLoaded(true)}
         />
 
         {/* Heart overlay */}

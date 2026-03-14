@@ -107,7 +107,7 @@ Typing in the search bar triggers frequent state updates. Two memoization strate
 | Technology | Version | Role |
 | :--- | :--- | :--- |
 | [React](https://react.dev/) | `^19.2.4` | UI framework |
-| [Vite](https://vitejs.dev/) | `^8.0.0` | Build tool & dev server |
+| [Vite](https://vitejs.dev/) | `^7.0.0` | Build tool & dev server |
 | [Tailwind CSS](https://tailwindcss.com/) | `^4.2.1` | Utility-first styling |
 | [ESLint](https://eslint.org/) | `^9.39.4` | Code linting |
 
